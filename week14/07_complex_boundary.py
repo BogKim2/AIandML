@@ -102,13 +102,14 @@ def dirichlet_bc_loss(x_bc, y_bc, t_bc, u_bc):
 @tf.function
 def neumann_bc_loss(x_bc, y_bc, t_bc, nx, ny):
     """Neumann BC: ∂u/∂n = 0 (단열 경계)"""
-    with tf.GradientTape() as tape:
+    with tf.GradientTape(persistent=True) as tape:
         tape.watch([x_bc, y_bc])
         xyt = tf.concat([x_bc, y_bc, t_bc], axis=1)
         u = model(xyt)
     
     du_dx = tape.gradient(u, x_bc)
     du_dy = tape.gradient(u, y_bc)
+    del tape  # persistent tape는 사용 후 삭제
     
     # 법선 방향 미분: ∂u/∂n = ∇u · n
     du_dn = du_dx * nx + du_dy * ny
