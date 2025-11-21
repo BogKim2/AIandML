@@ -1,11 +1,18 @@
 # 전산물리: AI와 물리학의 만남
 ## Computational Physics: From Neural Networks to Physics-Informed AI
 
-**부산대학교 물리학과**  
-**학년**: 3학년  
-**학기**: 2025년 1학기  
-**강의시간**: 주 3시간 (강의 2시간 + 실습 1시간)  
-**사용 도구**: Python, Claude AI, VS Code  
+**부산대학교 물리학과**
+**학년**: 2학년 1학기
+**학기**: 2025년 1학기
+**강의시간**: 주 3시간 (강의 2시간 + 실습 1시간)
+**사용 도구**: Python, Claude AI, VS Code
+
+## 👥 팀 프로젝트 정보
+
+**팀 구성**: 4명 1팀
+**프로젝트 형태**: 팀별 협업 프로젝트
+**발표**: 학기말 팀별 프로젝트 발표 예정
+**협업 도구**: GitHub를 통한 코드 공유 및 버전 관리  
 
 ---
 
@@ -53,29 +60,38 @@
 
 ### 🔷 Part I: Neural Networks & Deep Learning (Weeks 1-7)
 
-#### **Week 1: 강의 소개 및 환경 설정**
+#### **Week 1: 강의 소개 및 환경 설정** ✅
 - 강의 목표 및 평가 방식 소개
-- Python 환경 설정: Anaconda, VS Code, Git
+- Python 환경 설정: uv, Git, VS Code/Cursor
 - Claude AI 계정 생성 및 기본 사용법
-- **실습**: "Hello, Neural Network!" - 첫 번째 신경망 구현
+- **실습**:
+  - "Hello, Neural Network!" - 첫 번째 신경망 구현
+  - 다항식 피팅을 통한 ML 기초
 
 **주요 개념**: Development Environment, AI in Physics
 
+**Python 파일**: `00_hello_world.py`, `01_hello_nn.py`, `02_polynomial_fitting.py`
+
 ---
 
-#### **Week 2: 머신러닝 기초**
+#### **Week 2: 머신러닝 기초** ✅
 - 머신러닝의 세 가지 유형: 지도/비지도/강화 학습
 - 데이터 전처리와 특징 추출
 - 손실 함수(Loss Function)와 최적화
-- **실습**: Linear Regression으로 물리 데이터 피팅
+- **실습**:
+  - Linear Regression으로 물리 데이터 피팅 (후크 법칙)
+  - 비지도 학습 (클러스터링)
+  - Gradient Descent 시각화
 
 **주요 개념**: Supervised Learning, Loss Functions, Gradient Descent
+
+**Python 파일**: `01_linear_regression_spring.py`, `02_unsupervised_clustering.py`, `03_data_preprocessing.py`, `04_gradient_descent_vis.py`
 
 **과제 1**: 실험 데이터를 이용한 선형/비선형 회귀 분석
 
 ---
 
-#### **Week 3: Neural Network 기초 이론**
+#### **Week 3: Neural Network 기초 이론** ✅
 - Perceptron과 Multi-Layer Perceptron
 - Activation Functions: ReLU, Sigmoid, Tanh
 - Forward Propagation의 수학적 구조
@@ -84,24 +100,30 @@
 
 **주요 개념**: Neurons, Activation, Forward Pass
 
+**Python 파일**: `01_perceptron.py`, `02_activation_functions.py`, `03_forward_propagation.py`, `04_mlp_numpy.py`, `05_universal_approximation.py`
+
 **참고**: MIT 6.S191 Lecture 1
 
 ---
 
-#### **Week 4: Backpropagation과 최적화**
-- Backpropagation 알고리즘의 원리
-- Chain Rule과 자동 미분
-- Gradient Descent 변형: SGD, Momentum, Adam
-- Learning Rate Scheduling
-- **실습**: 역전파 알고리즘 직접 구현하기
+#### **Week 4: 물리 데이터로 학습하기** ✅
+- TensorFlow/Keras를 이용한 회귀 모델
+- 과적합(Overfitting)과 과소적합(Underfitting)
+- 모델 복잡도와 성능의 관계
+- **실습**:
+  - 1D 함수 근사
+  - 포물선 운동 예측
+  - 진자 주기 학습
 
-**주요 개념**: Backpropagation, Optimizers, Gradient Flow
+**주요 개념**: Regression with Neural Networks, Model Complexity
 
-**과제 2**: 다양한 Optimizer 성능 비교 실험
+**Python 파일**: `01perfect1d.py`, `02projectile.py`, `03overfitting.py`, `04pendulum.py`
+
+**과제 2**: 다양한 물리 문제에 NN 적용
 
 ---
 
-#### **Week 5: Deep Learning의 핵심 기법**
+#### **Week 5: Deep Learning의 핵심 기법** ✅
 - Regularization: L1/L2, Dropout, Batch Normalization
 - Overfitting vs. Underfitting
 - Data Augmentation
@@ -110,31 +132,44 @@
 
 **주요 개념**: Regularization, Generalization, CNN Basics
 
+**Python 파일**: `01_regularization.py`, `02_overfitting_underfitting.py`, `03_data_augmentation.py`, `04_transfer_learning.py`, `05_mnist_cnn.py`
+
 **참고**: MIT 6.S191 Lecture 2
 
 ---
 
-#### **Week 6: Transformer와 Attention Mechanism**
+#### **Week 6: Transformer와 Attention Mechanism** ✅
 - RNN의 한계와 Attention의 등장
 - Self-Attention의 원리
 - Transformer 아키텍처 분석
 - Positional Encoding
-- **실습**: 간단한 Sequence Modeling
+- **실습**:
+  - Attention 메커니즘 기초
+  - Multi-Head Attention
+  - 완전한 Transformer Block 구현
+  - 실전 시퀀스 모델링
 
-**주요 개념**: Attention, Transformers, Sequence Modeling
+**주요 개념**: Attention, Self-Attention, Transformers, Sequence Modeling
 
-**참고**: "Attention Is All You Need" paper
+**Python 파일**: `01_attention_basics.py`, `02_self_attention.py`, `03_positional_encoding.py`, `04_transformer_block.py`, `05_sequence_modeling.py`
+
+**참고**: "Attention Is All You Need" (Vaswani et al., 2017)
 
 ---
 
-#### **Week 7: Large Language Models (LLM) 개론**
+#### **Week 7: Large Language Models (LLM) 개론** ✅
 - GPT, BERT, Claude 아키텍처 비교
 - Pre-training과 Fine-tuning
 - Token, Embedding, Context Window
-- LLM의 물리학 응용 가능성
-- **실습**: Claude API를 이용한 자동 코드 생성
+- RLHF (Reinforcement Learning from Human Feedback)
+- **실습**:
+  - Tokenization 방법 (Character, Word, BPE)
+  - GPT vs BERT 아키텍처 비교
+  - Claude API 개념 학습 (시뮬레이션)
 
-**주요 개념**: LLM Architecture, Tokenization, Prompting
+**주요 개념**: LLM Architecture, Tokenization, Prompting, RLHF
+
+**Python 파일**: `01_tokens_and_embeddings.py`, `02_gpt_bert_architectures.py`, `03_pretraining_finetuning.py`, `04_claude_api_simple.py`
 
 **프로젝트 중간 발표**: Part I 학습 내용 요약 및 미니 프로젝트
 
@@ -152,65 +187,79 @@
 
 ---
 
-#### **Week 9: 고전 역학 문제 해결**
+#### **Week 9: 고전 역학 문제 해결** ✅
 - 뉴턴 방정식의 수치 해법 (Euler, RK4)
 - 행성 운동 시뮬레이션
 - 진자 운동과 혼돈 (Chaotic Systems)
 - 라그랑지안과 해밀토니안 역학
-- **실습**: 
-  - 이중 진자(Double Pendulum) 시뮬레이션
-  - 3체 문제 수치 해법
-  - LLM으로 자동 코드 생성 및 최적화
+- **실습**:
+  - Euler vs RK4 비교
+  - 행성 운동 시뮬레이션
+  - 혼돈 진자 (Double Pendulum)
+  - 라그랑지안/해밀토니안 역학
 
 **주요 개념**: ODEs, Numerical Integration, Chaotic Dynamics
+
+**Python 파일**: `01euler_rk4.py`, `02planetary.py`, `03chaotic_pendulum.py`, `04lagrangian_hamiltonian.py`
 
 **과제 3**: LLM을 활용한 역학 문제 풀이 및 시각화
 
 ---
 
-#### **Week 10: 전자기학 시뮬레이션**
-- Maxwell 방정식의 수치 해법
+#### **Week 10: 전자기학 시뮬레이션** ✅
+- Maxwell 방정식의 수치 해법 (FDTD)
 - 전기장/자기장 계산 및 시각화
-- 유한 차분법(Finite Difference Method)
+- 라플라스 방정식과 정전기 문제
 - 전자기파 전파 시뮬레이션
 - **실습**:
-  - 다중 점전하의 전기장 계산
-  - 전자기파 전파 애니메이션
-  - 도체 내부 전위 분포 계산
+  - 전기장/자기장 기초
+  - 다중 점전하의 전기장
+  - Maxwell 방정식 1D/2D
+  - 전자기파 애니메이션
+  - 도체 전위 분포
 
-**주요 개념**: Maxwell Equations, FDM, Vector Field Visualization
+**주요 개념**: Maxwell Equations, FDTD, Vector Field Visualization
+
+**Python 파일**: `01_electric_field_basics.py` ~ `10_conductor_potential.py` (총 10개)
 
 **과제 4**: 복잡한 전하 배치의 전기장 분석
 
 ---
 
-#### **Week 11: 양자역학 시뮬레이션**
+#### **Week 11: 양자역학 시뮬레이션** ✅
 - Schrödinger 방정식의 수치 해법
 - 파동함수 시각화
 - 터널링 효과 시뮬레이션
 - Finite Well, Harmonic Oscillator
 - **실습**:
-  - 1차원 포텐셜 우물 문제
-  - 시간 의존 Schrödinger 방정식
-  - 파동 패킷의 시간 발전
+  - Schrödinger 방정식 기초
+  - 파동함수 시각화
+  - 양자 터널링
+  - 양자 우물과 조화 진동자
 
-**주요 개념**: Quantum Mechanics, Wave Functions, Numerical Eigenvalue Problems
+**주요 개념**: Quantum Mechanics, Wave Functions, Tunneling
+
+**Python 파일**: `01schrodinger.py`, `02wavefunction.py`, `03tunneling.py`, `04wells_oscillator.py`
 
 **과제 5**: 다양한 포텐셜에서의 양자 상태 분석
 
 ---
 
-#### **Week 12: 통계물리 및 Monte Carlo 시뮬레이션**
+#### **Week 12: 통계물리 및 Monte Carlo 시뮬레이션** ✅
 - Monte Carlo 방법론
 - Ising 모델과 상전이
 - Metropolis-Hastings 알고리즘
 - 열역학적 성질 계산
 - **실습**:
-  - 2D Ising 모델 시뮬레이션
-  - 상전이 온도 계산
-  - Partition Function 추정
+  - Random Walk
+  - Monte Carlo로 π 추정
+  - 1D/2D Ising 모델
+  - 상전이 분석
+  - 열역학적 성질 계산
 
 **주요 개념**: Statistical Physics, Monte Carlo, Phase Transitions
+
+**Python 파일**: `01_random_walk.py` ~ `08_ising_2d_advanced.py` (총 8개)
 
 **프로젝트 중간 점검**: Part II 실습 결과 공유
 
@@ -218,34 +267,44 @@
 
 ### 🔷 Part III: Physics-Informed Neural Networks (Weeks 13-14)
 
-#### **Week 13: PINN 기초 이론**
+#### **Week 13: PINN 기초 이론 (ODE 편)** ✅
 - Physics-Informed Neural Networks 개념
 - 미분방정식을 Loss Function에 포함하기
 - Automatic Differentiation
-- PINN vs. 전통적 수치 해법
-- **실습**: 
-  - 간단한 ODE를 PINN으로 풀기
-  - 경계조건 처리 방법
+- PINN vs. 전통적 수치 해법 (RK4)
+- **실습**:
+  - 단순 ODE (TensorFlow)
+  - 조화 진동자 (PyTorch)
+  - 감쇠 진동자 (TensorFlow)
+  - 경계값 문제 (PyTorch)
+  - 로렌츠 시스템 (혼돈 역학)
+  - TensorFlow vs PyTorch 비교
 
 **주요 개념**: PINN, Physics Loss, Boundary Conditions
 
-**참고 논문**: 
+**Python 파일**: `01_simple_ode.py` ~ `06_comparison_frameworks.py` (총 6개)
+
+**참고 논문**:
 - Raissi et al., "Physics-informed neural networks" (2019)
 - Karniadakis et al., "Physics-informed machine learning" (2021)
 
 ---
 
-#### **Week 14: PINN 응용 I - 편미분방정식**
-- 열전도 방정식 (Heat Equation)
-- 파동 방정식 (Wave Equation)
-- Burgers 방정식
-- Navier-Stokes 방정식 (개념)
+#### **Week 14: PINN 응용 - 편미분방정식** ✅
+- 1D/2D Heat Equation (열전도 방정식)
+- 1D/2D Wave Equation (파동 방정식)
+- Burgers 방정식 (비선형 PDE)
+- 복잡한 경계조건 처리
 - **실습**:
-  - 1D Heat Equation 풀이
-  - 2D Wave Equation 시뮬레이션
-  - 복잡한 경계조건 처리
+  - PINN 기본 구조
+  - 1D/2D Heat Equation
+  - 1D/2D Wave Equation
+  - Burgers Equation
+  - 복잡한 경계조건
 
 **주요 개념**: PDEs, PINN for Spatial-Temporal Problems
+
+**Python 파일**: `01_basic_pinn.py` ~ `07_complex_boundary.py` + `run_all.py` (총 8개)
 
 **과제 6**: PINN을 이용한 편미분방정식 해법 프로젝트
 
@@ -294,11 +353,12 @@
 - README.md에 실행 방법 및 결과 분석 포함
 
 ### 최종 프로젝트 요구사항
-- 2-3명 팀 구성
+- **4명 1팀** 구성
 - GitHub을 통한 협업
 - 10-15페이지 보고서 (LaTeX 권장)
-- 20분 발표 + 10분 질의응답
+- **팀별 발표**: 20분 발표 + 10분 질의응답
 - 재현 가능한 코드 및 데이터
+- 팀원 각자의 기여도 명시
 
 ---
 
